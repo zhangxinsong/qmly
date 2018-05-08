@@ -38,7 +38,8 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  green:    #18DE73
 );
 
 
@@ -72,7 +73,69 @@ $colors: (
 
 @import "ionic.theme.default";
 
+@font-face {
+  font-family: 'iconfont';
+  src: url('../assets/icon/iconfont/iconfont.eot');
+  src: url('../assets/icon/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../assets/icon/iconfont/iconfont.woff') format('woff'),
+  url('../assets/icon/iconfont/iconfont.ttf') format('truetype'),
+  url('../assets/icon/iconfont/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:20px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.tabs-ios .ion-ios-shouye:before{
+  content: "\e62e";
+}
+.tabs-ios .ion-md-shouye:before{
+  content: "\e62e";
+}
+.ion-ios-fabu:before{
+  content: "\e6a0";
+}
+.ion-md-fabu:before{
+  content: "\e6a0";
+}
+.ion-ios-jihua:before{
+  content: "\e639";
+}
+.ion-md-jihua:before{
+  content: "\e639";
+}
+.ion-ios-wode:before{
+  content: "\e60d";
+}
+.ion-md-wode:before{
+  content: "\e60d";
+}
+.ion-ios-liebiao:before{
+  content: "\e526";
+}
+.ion-md-liebiao:before{
+  content: "\e526";
+}
+.ion-ios-xiaoxi:before{
+  content: "\e60e";
+}
+.ion-md-xiaoxi:before{
+  content: "\e60e";
+}
 
+// .icon-jihua:before { content: "\e639"; }
+
+// .icon-fabu:before { content: "\e6a0"; }
+
+// .icon-wode:before { content: "\e60d"; }
+
+// .icon-xiaoxi:before { content: "\e60e"; }
+
+// .icon-shouye:before { content: "\e62e"; }
+
+// .icon-liebiao:before { content: "\e526"; }
 // Ionicons
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:
@@ -86,3 +149,4 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+

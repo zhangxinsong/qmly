@@ -3,9 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { LoginPage } from '../pages/login/login';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
+import { WodePage } from '../pages/wode/wode';
+import { ListPage } from '../pages/list/list';
+import { RegPage } from '../pages/reg/reg';
+import { LuxianPage} from '../pages/luxian/luxian';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -17,7 +22,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    LoginPage,
+    WodePage,
+    ListPage,
+    RegPage,
+    LuxianPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +39,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    WodePage,
+    TabsPage,
+    LoginPage,
+    ListPage,
+    RegPage,
+    LuxianPage
   ],
   providers: [
     StatusBar,

@@ -1,3 +1,70 @@
 page-home {
-
+    ion-navbar{
+        p{
+            display: inline-block;
+            text-align: center;
+            width: 15%;
+        }
+        ion-searchbar{
+            display: inline-block;
+            width: 75%;
+            text-align: center;
+        }
+        .iconfont{
+            text-align: center;
+            width: 10%;
+        }
+    }
+    ion-content{
+        ion-slides{
+            width: 100%;
+            height: 200px;
+        }
+        .slides img{
+            width: 100%;
+            height: 200px;
+        }
+        .big{
+            width: 100%;
+            margin-top: 10px;
+        }
+        .yuan{
+            display: inline-block;
+            width: 24%;
+            text-align: center;
+            .nei{
+                margin: 0 auto;
+                width: 60px;
+                height: 60px;
+                line-height: 60px;
+                border-radius: 30px;
+                a{
+                    color: black;
+                }
+            }
+            .nei-1{
+                background-color: #009688;
+            }
+            .nei-2{
+                background-color: #259B24;
+            }
+            .nei-3{
+                background-color: #E51C23;
+            }
+            .nei-4{
+                background-color: #FF9800;
+            }
+        }
+        h4{
+            text-align: center;
+            font-size: 16px;
+            padding: 8px 0;
+            background-color: #f4f4f4;
+            margin-bottom: 0;
+            border-bottom: 1px solid gray;
+        }
+        .list-md{
+            margin-bottom: 0;
+        }
+    }
 }

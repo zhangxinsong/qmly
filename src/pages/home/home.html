@@ -1,17 +1,54 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+<ion-header no-border>
+  <ion-navbar color="green">
+    <p>石家庄</p>
+    <ion-searchbar [(ngModel)]="myInput"></ion-searchbar>
+   <ion-icon name="xiaoxi"></ion-icon>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+  <ion-slides class="slides" autoplay=3000 loop="true">
+    <ion-slide>
+      <img src="assets/imgs/slide-1.png" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/imgs/slide-1.png" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/imgs/slide-1.png" alt="">
+    </ion-slide>
+  </ion-slides>
+  <button ion-button color="green" (click)="login()">login</button>
+  <button ion-button color="green" (click)="reg()">reg</button>
+  <div class="big">
+    <div class="yuan">
+      <div class="nei nei-1"><a>票</a></div>
+      <div><span><a>景点门票</a></span></div>
+    </div>
+    <div class="yuan">
+      <div class="nei nei-2"><a>票</a></div>
+      <div><span><a>景点门票</a></span></div>
+    </div>
+    <div class="yuan">
+      <div class="nei nei-3"><a>票</a></div>
+      <div><span><a>景点门票</a></span></div>
+    </div>
+    <div class="yuan">
+      <div class="nei nei-4"><a>票</a></div>
+      <div><span><a>景点门票</a></span></div>
+    </div>
+  </div>
+  <h4>导游路线推荐</h4>
+  <div class="list">
+    <ion-list>
+      <ion-item *ngFor="let item of items" color="light" (click)="luxian()">
+        <ion-thumbnail item-start>
+          <img [src]="item.listimg">
+        </ion-thumbnail>
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.miaoshu }}</p>
+        <button ion-button item-end color="green">立即预约</button>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>
