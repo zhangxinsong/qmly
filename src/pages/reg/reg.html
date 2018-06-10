@@ -15,12 +15,10 @@
     <input type="text" placeholder="手机号" class="phone">
     <input type="text" placeholder="验证码" class="yzm">
     <input type="text" placeholder="验证码" class="yzm1">
-    <input type="text" placeholder="账号" class="username">
-    <input type="password" placeholder="密码" class="password">
-    <input type="password" placeholder="再次输入密码" class="password1">
+    <input type="text" placeholder="账号" class="username" [(ngModel)]="username">
+    <input type="password" placeholder="密码" class="password" [(ngModel)]="password">
+    <input type="password" placeholder="再次输入密码" class="password1" [(ngModel)]="password1">
     <p>密码由6-16位数字、字母或符号组成，不能是9位以下纯数字。</p>
-    <input type="submit" value="注册" class="reg">
+    <input type="submit" value="注册" class="reg" (click)="reg()">
   </div>
-
-
 </ion-content>

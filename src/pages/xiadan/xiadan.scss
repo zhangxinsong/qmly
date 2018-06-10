@@ -1,0 +1,35 @@
+page-xiadan {
+    ion-title{
+        text-align: center;
+    }
+    ion-content{
+        .xiadanrenshu{
+            width: 10%;
+        }
+        .xiadanren{
+            width: 20%;
+        }
+        .mobile{
+            width: 40%;
+        }
+        .youhuquan{
+            position: relative;
+            left: 260px;
+        }
+    }
+    .di2{
+        width: 40%;
+        height: 56px;
+        button{
+            width:100%;
+            background: #FF9800;
+        }
+        .zhifu{
+            height: 100%;
+            color: #18DE73;
+            text-align: center;
+            line-height: 56px;
+            font-size: 18px;
+        }
+    }
+}

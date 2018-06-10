@@ -1,0 +1,56 @@
+<!--
+  Generated template for the XiadanPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+  <ion-navbar color="green">
+    <ion-title>下单</ion-title>
+    <ion-buttons end (click)="lianxi()">
+      <button ion-button icon-only>
+        <ion-icon></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img [src]="data.img">
+      </ion-thumbnail>
+      <h2>{{ data.title }}</h2>
+      <p>{{ data.jieshao }}</p>
+      <button ion-button clear item-end>{{ data.money }}</button>
+    </ion-item>
+    <ion-item>
+      <p item-start>人数</p>
+      <input type="number" item-end class="xiadanrenshu" [(ngModel)]="renshu">
+    </ion-item>
+    <ion-item>
+      <p item-start>出行人</p>
+      <input type="text" item-end class="xiadanren" [(ngModel)]="ren">
+    </ion-item>
+    <ion-item>
+      <p item-start>手机号</p>
+      <input type="number" item-end class="mobile" [(ngModel)]="mobile">
+    </ion-item>
+    <ion-item>
+      <p item-start>优惠券</p>
+      <ion-select [(ngModel)]="youhuquan" placeholder="暂无" item-end class="youhuquan">
+        <ion-option value="10-2">满10-2</ion-option>
+        <ion-option value="20-5">满20-5</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-navbar no-padding>
+    <ion-title start>￥{{ data.money*renshu }}</ion-title>
+    <ion-buttons end class="di2">
+        <button class="zhifu" (click)="zhifu()">立即支付</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-footer>

@@ -1,8 +1,16 @@
 <ion-header no-border>
   <ion-navbar color="green">
-    <p>石家庄</p>
-    <ion-searchbar [(ngModel)]="myInput"></ion-searchbar>
-   <ion-icon name="xiaoxi"></ion-icon>
+    <ion-buttons start>
+      <button ion-button>
+        石家庄
+      </button>
+    </ion-buttons>
+    <ion-searchbar [(ngModel)]="myInput" content></ion-searchbar>
+    <ion-buttons end (click)="lianxi()">
+      <button ion-button icon-only>
+        <ion-icon name="chatboxes"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -41,12 +49,12 @@
   <h4>导游路线推荐</h4>
   <div class="list">
     <ion-list>
-      <ion-item *ngFor="let item of items" color="light" (click)="luxian()">
+      <ion-item *ngFor="let item of data" color="light" (click)="luxian(item._id)">
         <ion-thumbnail item-start>
-          <img [src]="item.listimg">
+          <img [src]="item.img">
         </ion-thumbnail>
         <h2>{{ item.title }}</h2>
-        <p>{{ item.miaoshu }}</p>
+        <p>{{ item.jieshao }}</p>
         <button ion-button item-end color="green">立即预约</button>
       </ion-item>
     </ion-list>

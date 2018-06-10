@@ -2,20 +2,10 @@ page-wode {
     ion-title{
         text-align: center;
     }
-    .person{
-        height: 100px;
-        .img-box{
-            display: inline-block;
-            padding-top: 20px;
-            padding-left: 20px;
-            img{
-                height: 70px;
-                width: 70px;
-            }
-        }
-        .word-box{
-            margin-left: 20px;
-            display: inline-block;
+    .list-md{
+        margin-bottom: 0;
+        h2{
+            font-size: 20px;
         }
     }
     .grid{

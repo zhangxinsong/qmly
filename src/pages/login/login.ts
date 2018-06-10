@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Http,Jsonp } from '@angular/http';
+import { ModalController } from 'ionic-angular';
+import { HomePage } from '../home/home';
+import { RegPage } from '../reg/reg';
+import { ForgetPage } from '../forget/forget';
+// import { ForgetPage } from '../forget/forget';
 
 /**
  * Generated class for the LoginPage page.
@@ -15,7 +22,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public http:Http,
+    public jsonp:Jsonp,
+    public modalCtrl: ModalController,
+    public storage: Storage) {
   }
 
   ionViewDidLoad() {
@@ -38,4 +50,33 @@ export class LoginPage {
     }
   }
 
+  username = ''
+  password = ''
+
+  login(){
+    if(this.password.length < 6){
+      alert('密码不能少于6位');
+    }else{
+      this.http.post("http://140.143.133.139:3000/login",{name:this.username,password:this.password}).subscribe(data => {
+        let Data = data.json()
+        if(Data.status){
+          this.storage.set('name', this.username);
+          console.log(Data);
+          alert('登录成功');
+          let contactModal = this.modalCtrl.create(HomePage, { name: this.username });
+          contactModal.present();
+        }else{
+          console.log(Data);
+          alert('用户名与密码不符');
+        }
+      })
+    }
+  }
+
+  reg(){
+    this.navCtrl.push(RegPage);
+  }
+  forget(){
+    this.navCtrl.push(ForgetPage);
+  }
 }

@@ -1,8 +1,13 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+import { ModalController, NavParams } from 'ionic-angular';
+import { Http,Jsonp } from '@angular/http';
 import { LoginPage } from '../login/login';
 import { RegPage } from '../reg/reg';
-import { LuxianPage } from '../luxian/luxian'; 
+import { LuxianPage } from '../luxian/luxian';
+import { LianxiPage } from '../lianxi/lianxi';
+import { QidongPage } from '../qidong/qidong';
 
 @Component({
   selector: 'page-home',
@@ -10,32 +15,40 @@ import { LuxianPage } from '../luxian/luxian';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
-
+  constructor(public navCtrl: NavController,
+    public http:Http,
+    public jsonp:Jsonp,
+    public modalCtrl: ModalController,
+    public params: NavParams,
+    public storage: Storage) {
+      
+  }
+  name = ""
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad HomePage');
   }
 
-  items = [
-    {
-      title:'sdasdasdasd',
-      miaoshu:'止呕盎司频道贵金属考虑到先从集散地分开收款的没事多了几分破',
-      listimg:'assets/imgs/logo.png'
-    },
-    {
-      title:'sdasdasdasd',
-      miaoshu:'止呕盎司频道贵金属考虑到先从集散地分开收款的没事多了几分破',
-      listimg:'assets/imgs/logo.png'
-    },
-    {
-      title:'sdasdasdasd',
-      miaoshu:'止呕盎司频道贵金属考虑到先从集散地分开收款的没事多了几分破',
-      listimg:'assets/imgs/logo.png'
-    },
-    {
-      title:'sdasdasdasd',
-      miaoshu:'止呕盎司频道贵金属考虑到先从集散地分开收款的没事多了几分破',
-      listimg:'assets/imgs/logo.png'
-    }
-  ]
+  ionViewWillEnter() {
+    this.storage.get('name').then((val) => {
+      if(val){
+        console.log(val)
+        this.name = val;
+      }else{
+        this.name = '';
+        let contactModal = this.modalCtrl.create(QidongPage);
+        contactModal.present();
+      }
+    });
+    this.http.get("http://140.143.133.139:3000/luxian").subscribe(data => {
+      let Data = data.json();
+      if(!status){
+        this.data = Data;
+        console.log(this.data);
+      }
+    })
+  }
+
+  data = []
 
   login(){
     this.navCtrl.push(LoginPage);
@@ -43,7 +56,10 @@ export class HomePage {
   reg(){
     this.navCtrl.push(RegPage);
   }
-  luxian(){
-    this.navCtrl.push(LuxianPage);
+  luxian(i){
+    this.navCtrl.push(LuxianPage,{id: i});
+  }
+  lianxi(){
+    this.navCtrl.push(LianxiPage);
   }
 }

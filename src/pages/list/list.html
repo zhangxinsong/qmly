@@ -14,41 +14,38 @@
 <ion-content no-padding>
   <ion-list class="xiala">
     <ion-item>
-      <ion-select [(ngModel)]="gaming" placeholder="AAAAA" >
-        <ion-option value="nes">NES</ion-option>
-        <ion-option value="n64">Nintendo64</ion-option>
-        <ion-option value="ps">PlayStation</ion-option>
-        <ion-option value="genesis">Sega Genesis</ion-option>
+      <ion-select [(ngModel)]="day" placeholder="天数" >
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+        <ion-option value="5">5</ion-option>
+        <ion-option value="6">6</ion-option>
+        <ion-option value="7">7</ion-option>
+        <ion-option value="8">8</ion-option>
       </ion-select>
-      <ion-select [(ngModel)]="gaming" placeholder="BBBB" >
-        <ion-option value="nes">NES</ion-option>
-        <ion-option value="n64">Nintendo64</ion-option>
-        <ion-option value="ps">PlayStation</ion-option>
-        <ion-option value="genesis">Sega Genesis</ion-option>
+      <ion-select [(ngModel)]="daoyou" placeholder="导游方式" >
+        <ion-option value="team">团队导游</ion-option>
+        <ion-option value="person">个人导游</ion-option>
       </ion-select>
-      <ion-select [(ngModel)]="gaming" placeholder="CCCC" >
-        <ion-option value="nes">NES</ion-option>
-        <ion-option value="n64">Nintendo64</ion-option>
-        <ion-option value="ps">PlayStation</ion-option>
-        <ion-option value="genesis">Sega Genesis</ion-option>
+      <ion-select [(ngModel)]="daoyou" placeholder="导游方式" >
+        <ion-option value="team">团队导游</ion-option>
+        <ion-option value="person">个人导游</ion-option>
       </ion-select>
-      <ion-select [(ngModel)]="gaming" placeholder="DDDD" >
-        <ion-option value="nes">NES</ion-option>
-        <ion-option value="n64">Nintendo64</ion-option>
-        <ion-option value="ps">PlayStation</ion-option>
-        <ion-option value="genesis">Sega Genesis</ion-option>
+      <ion-select [(ngModel)]="daoyou" placeholder="导游方式" >
+        <ion-option value="team">团队导游</ion-option>
+        <ion-option value="person">个人导游</ion-option>
       </ion-select>
     </ion-item>
   </ion-list>
 
   <ion-list>
-      <ion-item color="light">
+      <ion-item *ngFor="let item of data" color="light" (click)="daoyou(item.name)">
         <ion-avatar item-start>
-          <img src="assets/imgs/slide-1.png">
+          <img [src]="item.touxiang">
         </ion-avatar>
-        <h2>Finn</h2>
-        <h3>Don't Know What To Do!</h3>
-        <p>I've had a pretty messed up day. If we just...</p>
+        <h2>{{ item.name }}</h2>
+        <p>{{ item.introduce }}</p>
        </ion-item>
     </ion-list>
  

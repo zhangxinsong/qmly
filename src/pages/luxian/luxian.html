@@ -8,6 +8,11 @@
 
   <ion-navbar color="green">
     <ion-title>luxian</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only>
+          <ion-icon></ion-icon>
+        </button>
+      </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -16,25 +21,48 @@
 <ion-content no-padding>
   <ion-slides class="slides" autoplay=3000 loop="true">
     <ion-slide>
-      <img src="assets/imgs/slide-1.png" alt="">
+      <img [src]="data.img" alt="">
     </ion-slide>
     <ion-slide>
-      <img src="assets/imgs/slide-1.png" alt="">
+      <img [src]="data.img1" alt="">
     </ion-slide>
     <ion-slide>
-      <img src="assets/imgs/slide-1.png" alt="">
+      <img [src]="data.img1" alt="">
     </ion-slide>
   </ion-slides>
   <div class="biaoti">
-    <p>天安门-鸟巢-水立方-北京动物园-欢乐谷一日游</p>
-    <p>押金￥</p>
-    <span>已报名：</span><span>导游：</span><span>北京</span>
+    <p>{{ data.title }}</p>
+    <p>价格 ￥{{ data.money }}</p>
+    <span>已报名：{{ data.renshu }}</span><span>导游：{{ data.name }}</span><span>北京</span>
   </div>
   <p class="xiangqing">详情介绍</p>
   <div>
-    <p>dasdasdas</p>
+    <p>{{ data.jieshao }}</p>
     <p></p>
   </div>
-  
-
 </ion-content>
+<ion-footer>
+    <ion-navbar no-padding>
+      <ion-buttons start class="di1" (click)="daoyou(data.name)">
+        <button ion-button icon-only>
+          <ion-icon name="person"></ion-icon>
+        </button>
+        <p>导游</p>
+      </ion-buttons>
+      <ion-buttons start class="di1">
+        <button ion-button icon-only>
+          <ion-icon name="star"></ion-icon>
+        </button>
+        <p>收藏</p>
+      </ion-buttons>
+      <ion-buttons start class="di1" (click)="liaotian()">
+        <button ion-button icon-only>
+          <ion-icon name="chatbubbles"></ion-icon>
+        </button>
+        <p>联系</p>
+      </ion-buttons>
+      <ion-buttons end class="di2">
+          <button><p class="yuyue"  (click)="xiadan()">立即预约</p></button>
+      </ion-buttons>
+    </ion-navbar>
+</ion-footer>

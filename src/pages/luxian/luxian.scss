@@ -14,7 +14,6 @@ page-luxian {
         p{
             margin: 0;
         }
-        
     }
     .xiangqing{
         margin: 0;
@@ -22,5 +21,30 @@ page-luxian {
         font-size: 18px;
         text-align: center;
         background: gainsboro;
+    }
+    ion-buttons{
+        text-align: center;
+        p{
+            margin: 0;
+            font-size: 14px;
+        }
+    }
+    .di1{
+        width: 20%;
+    }
+    .di2{
+        width: 40%;
+        height: 56px;
+        button{
+            width:100%;
+            background: #FF9800;
+        }
+    }
+    .yuyue{
+        height: 100%;
+        color: #18DE73;
+        text-align: center;
+        line-height: 56px;
+        font-size: 18px;
     }
 }

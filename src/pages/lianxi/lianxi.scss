@@ -1,0 +1,35 @@
+page-lianxi {
+    ion-title{
+        text-align: center;
+    }
+    ion-content{
+        ion-col{
+            height: 100px;
+            text-align: center;
+            .fenlei{
+                width: 60px;
+                height: 60px;
+                border-radius: 30px;
+                margin: 10px auto 0px auto;
+                ion-icon{
+                    margin-top: 15px;
+                    font-size: 30px;
+                    color: #ffffff;
+                }
+            }
+            p{
+                margin: 0;
+                margin-top: 5px;
+            }
+        }
+        ion-list{
+            .item-md{
+                
+                p{
+                    font-size: 12px;
+                }
+            }
+        }
+        
+    }
+}
