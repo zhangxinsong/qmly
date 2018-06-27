@@ -29,30 +29,21 @@ export class DaoyouPage {
     console.log('ionViewDidLoad DaoyouPage');
   }
   ionViewWillEnter() {
-    let elements = document.querySelectorAll(".tabbar");
-    if (elements != null) {
-        Object.keys(elements).map((key) => {
-            elements[key].style.display = 'none';
-        });
-    }
     this.http.post("http://140.143.133.139:3000/person2/two",{name:this.name}).subscribe(data => {
-      console.log(data)
       let Data = data.json();
       console.log(Data);
       this.data = Data[0];
     })
-  }
-  ionViewWillLeave() {
-    let elements = document.querySelectorAll(".tabbar");
-    if (elements != null) {
-        Object.keys(elements).map((key) => {
-            elements[key].style.display = 'flex';
-        });
-    }
+    this.http.post("http://140.143.133.139:3000/pingjia/three",{daoyou:this.name}).subscribe(data => {
+      let Data = data.json();
+      console.log(Data);
+      this.pingjia = Data;
+    })
   }
 
   name = ''
   data = {}
+  pingjia = []
 
   luxian(i){
     this.navCtrl.push(LuxianPage);

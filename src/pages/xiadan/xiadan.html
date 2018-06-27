@@ -40,15 +40,15 @@
     <ion-item>
       <p item-start>优惠券</p>
       <ion-select [(ngModel)]="youhuquan" placeholder="暂无" item-end class="youhuquan">
-        <ion-option value="10-2">满10-2</ion-option>
-        <ion-option value="20-5">满20-5</ion-option>
+        <ion-option value="2">满10-2</ion-option>
+        <ion-option value="5">满20-5</ion-option>
       </ion-select>
     </ion-item>
   </ion-list>
 </ion-content>
 <ion-footer>
   <ion-navbar no-padding>
-    <ion-title start>￥{{ data.money*renshu }}</ion-title>
+    <ion-title start>￥{{ data.money*renshu-youhuquan }}</ion-title>
     <ion-buttons end class="di2">
         <button class="zhifu" (click)="zhifu()">立即支付</button>
     </ion-buttons>

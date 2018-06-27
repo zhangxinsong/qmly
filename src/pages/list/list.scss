@@ -2,19 +2,20 @@ page-list {
     ion-title{
         text-align: center;
     }
-    .xiala{
-        width: 100%;
-        display: inline-block;
-        margin-bottom: 2px;
-        .select-md{
-            width:25%;
-            padding: 0;
-            .select-text{
-                width: 80%;
-            }
-            .select-icon{
-                width:20%;
-            }
-        }
+    .sousu{
+        box-shadow: none;
+    }
+    .list-md{
+        margin-bottom: 0px;
+    }
+    .content-md{
+        background-color: #DBDBDB;
+    }
+    .itemone{
+        border-radius: 10px;
+        width: 98%;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 4px;
     }
 }

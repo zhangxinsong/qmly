@@ -31,10 +31,15 @@ page-home {
                 margin: 0 auto;
                 width: 60px;
                 height: 60px;
-                line-height: 60px;
                 border-radius: 30px;
                 a{
                     color: black;
+                }
+                img{
+                    margin-top: 10px;
+                    text-align: center;
+                    width: 40px;
+                    height: 40px;
                 }
             }
             .nei-1{
@@ -60,6 +65,19 @@ page-home {
         }
         .list-md{
             margin-bottom: 0;
+            p{
+                margin-top: 10px;
+                font-size: 12px;
+                word-wrap: break-word;
+                word-break: break-all;
+                overflow: hidden;
+            }
+        }
+        ion-item{
+            h2{
+                color:#18DE73;
+                font-size: 16px;
+            }
         }
     }
 }

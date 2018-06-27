@@ -42,10 +42,20 @@ export class ListPage {
   }
 
   data = []
+  area = ''
 
   daoyou(i){
     console.log(i)
     this.navCtrl.push(DaoyouPage,{name:i});
+  }
+
+  didian(){
+    console.log("aaa")
+    this.http.post("http://140.143.133.139:3000/person2/three",{area: this.area}).subscribe(data => {
+      let Data = data.json();
+      console.log(Data);
+      this.data = Data;
+    })
   }
 
 }

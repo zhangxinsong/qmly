@@ -15,47 +15,16 @@
   </ion-navbar>
 </ion-header>
 <ion-content no-padding>
-  <div no-padding>
-    <ion-segment [(ngModel)]="dingdan">
-      <ion-segment-button value="all">
-        全部
-      </ion-segment-button>
-      <ion-segment-button value="daifu">
-        代付款
-      </ion-segment-button>
-      <ion-segment-button value="yuding">
-        已预订
-      </ion-segment-button>
-      <ion-segment-button value="daiwan">
-        待完成
-      </ion-segment-button>
-      <ion-segment-button value="daiping">
-        待评价
-      </ion-segment-button>
-    </ion-segment>
-  </div>
-      
-  <div [ngSwitch]="pet">
-    <ion-list *ngSwitchCase="'all'">
-      <ion-item>
-      </ion-item>
-    </ion-list>
-    <ion-list *ngSwitchCase="'daifu'">
-      <ion-item>
-      </ion-item>
-    </ion-list>
-    <ion-list *ngSwitchCase="'yuding'">
-      <ion-item>
-      </ion-item>
-    </ion-list>
-    <ion-list *ngSwitchCase="'daiwan'">
-      <ion-item>
-      </ion-item>
-    </ion-list>
-    <ion-list *ngSwitchCase="'daiping'">
-      <ion-item>
-      </ion-item>
-    </ion-list>
-  </div>
+  <ion-list>
+    <ion-item *ngFor="let item of dataAll,let i = index">
+      <ion-avatar item-start>
+        <img [src]="item.luxianimg">
+      </ion-avatar>
+      <h2>{{ item.luxianbiaoti }}</h2>
+      <p>人数：{{ item.renshu }}</p>
+      <button ion-button item-end (click)="delete(item._id,i)">删除订单</button>
+      <button ion-button item-end (click)="pingjia(item.daoyou)">评价</button>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

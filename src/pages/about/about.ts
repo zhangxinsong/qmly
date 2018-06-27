@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { CityDataProvider } from "../../providers/city-data/city-data";
 import { Http,Jsonp } from '@angular/http';
-import { isLeapYear } from 'ionic-angular/util/datetime-util';
+import { ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 @Component({
@@ -18,6 +18,7 @@ export class AboutPage {
     public cityDataProvider: CityDataProvider,
     public http:Http,
     public jsonp:Jsonp,
+    private toastCtrl: ToastController,
     public storage: Storage) {
     this.cityColumns = this.cityDataProvider.cities;
   }
@@ -55,14 +56,26 @@ export class AboutPage {
       type: this.leixing,
       miaoshu: this.miaoshu
     }
-      this.http.post("http://www.myweiya.cn:3000/task",postdata).subscribe(data => {
-        let Data = data.json();
-        console.log(Data);
-        if(Data.status){
-          alert(Data.msg);
-        }else{
-          alert('服务器内部错误')
-        }
+    this.http.post("http://www.myweiya.cn:3000/task",postdata).subscribe(data => {
+      let Data = data.json();
+      console.log(Data);
+      if(Data.status){
+        let toast = this.toastCtrl.create({
+          message: '发布成功',
+          duration: 2000,
+          position: 'middle'
+        });
+        toast.present();
+        this.title = ""
+        this.area = ""
+        this.fangshi = ""
+        this.year = ""
+        this.month = ""
+        this.day = ""
+        this.tianshu = ""
+        this.leixing = ""
+        this.miaoshu = ""
+      }
     })
   }
 

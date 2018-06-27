@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http,Jsonp } from '@angular/http';
 import { CityDataProvider } from "../../providers/city-data/city-data";
+import { ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 /**
@@ -24,6 +25,7 @@ export class Shezhi1Page {
     public cityDataProvider: CityDataProvider,
     public http:Http,
     public jsonp:Jsonp,
+    private toastCtrl: ToastController,
     public storage: Storage) {
     this.cityColumns = this.cityDataProvider.cities;
   }
@@ -96,7 +98,12 @@ export class Shezhi1Page {
     this.http.post("http://www.myweiya.cn:3000/person",dates).subscribe(data => {
       let Data = data.json()
       if(Data.status){
-        console.log(Data);
+        let toast = this.toastCtrl.create({
+          message: '修改成功',
+          duration: 2000,
+          position: 'middle'
+        });
+        toast.present();
       }
     })
   }

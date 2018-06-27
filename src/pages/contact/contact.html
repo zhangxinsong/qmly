@@ -8,9 +8,10 @@
 
 <ion-content no-padding>
   <div id="container"></div>
-  <ion-list>
-    <ion-item>
-      
-    </ion-item>
-  </ion-list>
+  <div id="kuang">
+    <div *ngFor="let item of data">
+      <h4>{{ item.title }}</h4>
+      <span>{{ item.xingcheng }}</span>
+    </div>
+  </div>
 </ion-content>

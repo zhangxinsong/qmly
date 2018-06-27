@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http,Jsonp } from '@angular/http';
 import { Storage } from '@ionic/storage';
+import { DingdanPage } from '../dingdan/dingdan';
 
 /**
  * Generated class for the XiadanPage page.
@@ -23,6 +24,8 @@ export class XiadanPage {
     public jsonp:Jsonp,
     public storage: Storage) {
       this.id = navParams.get('id');
+      this.img = navParams.get('img');
+      this.biaoti = navParams.get('biaoti');
   }
 
   ionViewDidLoad() {
@@ -55,6 +58,8 @@ export class XiadanPage {
   }
 
   id = ''
+  img =''
+  biaoti = ''
   name = ''
   renshu:Number
   mobile:Number
@@ -71,10 +76,15 @@ export class XiadanPage {
       renshu : this.renshu,
       mobile: this.mobile,
       luxianid: this.id,
+      luxianimg: this.img,
+      luxianbiaoti: this.biaoti
     }
     this.http.post("http://140.143.133.139:3000/dingdan",postdata).subscribe(data => {
-      let Data = data.json();
-      console.log(Data);
+      if(data){
+        let Data = data.json();
+        console.log(Data);
+        this.navCtrl.push(DingdanPage, {content:"all"});
+      }  
     })
   }
 

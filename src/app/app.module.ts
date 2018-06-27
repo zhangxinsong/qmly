@@ -23,6 +23,8 @@ import { QidongPage } from '../pages/qidong/qidong';
 import { AboutusPage } from '../pages/aboutus/aboutus';
 import { TaskPage } from '../pages/task/task';
 import { DingdanPage } from '../pages/dingdan/dingdan';
+import { PjonePage } from '../pages/pjone/pjone';
+import { PingjiaPage } from '../pages/pingjia/pingjia';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -51,13 +53,17 @@ import { CityDataProvider } from '../providers/city-data/city-data';
     QidongPage,
     AboutusPage,
     TaskPage,
-    DingdanPage
+    DingdanPage,
+    PjonePage,
+    PingjiaPage
   ],
   imports: [
     HttpModule,
     JsonpModule,
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,{
+      tabsHideOnSubPages: 'true'
+    }),
     MultiPickerModule,
     IonicStorageModule.forRoot()
   ],
@@ -82,7 +88,9 @@ import { CityDataProvider } from '../providers/city-data/city-data';
     QidongPage,
     AboutusPage,
     TaskPage,
-    DingdanPage
+    DingdanPage,
+    PjonePage,
+    PingjiaPage
   ],
   providers: [
     StatusBar,

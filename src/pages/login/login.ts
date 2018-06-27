@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http,Jsonp } from '@angular/http';
-import { ModalController } from 'ionic-angular';
-import { HomePage } from '../home/home';
+import { ToastController } from 'ionic-angular';
 import { RegPage } from '../reg/reg';
+import { TabsPage } from '../tabs/tabs'; 
 import { ForgetPage } from '../forget/forget';
 // import { ForgetPage } from '../forget/forget';
 
@@ -26,7 +26,7 @@ export class LoginPage {
     public navParams: NavParams,
     public http:Http,
     public jsonp:Jsonp,
-    public modalCtrl: ModalController,
+    private toastCtrl: ToastController,
     public storage: Storage) {
   }
 
@@ -34,20 +34,10 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
   ionViewWillEnter() {
-    let elements = document.querySelectorAll(".tabbar");
-    if (elements != null) {
-        Object.keys(elements).map((key) => {
-            elements[key].style.display = 'none';
-        });
-    }
+    
   }
   ionViewWillLeave() {
-    let elements = document.querySelectorAll(".tabbar");
-    if (elements != null) {
-        Object.keys(elements).map((key) => {
-            elements[key].style.display = 'flex';
-        });
-    }
+
   }
 
   username = ''
@@ -62,15 +52,27 @@ export class LoginPage {
         if(Data.status){
           this.storage.set('name', this.username);
           console.log(Data);
-          alert('登录成功');
-          let contactModal = this.modalCtrl.create(HomePage, { name: this.username });
-          contactModal.present();
+          let toast = this.toastCtrl.create({
+            message: '登录成功',
+            duration: 2000,
+            position: 'middle'
+          });
+          toast.present();
+          this.navCtrl.setRoot(TabsPage);
         }else{
-          console.log(Data);
-          alert('用户名与密码不符');
+          let toast = this.toastCtrl.create({
+            message: '用户名密码不符',
+            duration: 2000,
+            position: 'middle'
+          });
+          toast.present();
         }
       })
     }
+  }
+
+  showToast() {
+    
   }
 
   reg(){

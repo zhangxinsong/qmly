@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Http,Jsonp } from '@angular/http';
+import { Storage } from '@ionic/storage';
 
 declare var BMap;
 declare var BMap_Symbol_SHAPE_POINT;
@@ -13,7 +15,11 @@ export class ContactPage {
   map: any;//地图对象
   marker: any;//标记
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public http:Http,
+    public jsonp:Jsonp,
+    public storage: Storage) {
 
   }
   ionViewDidEnter() {
@@ -49,5 +55,16 @@ export class ContactPage {
     //         alert('failed'+this.getStatus());
     //     }
     // },{enableHighAccuracy: true})
+    this.storage.get('name').then((val) => {
+      this.name = val;
+      this.http.post("http://140.143.133.139:3000/task/two",{name:this.name}).subscribe(data => {
+        let Data = data.json();
+        console.log(Data);
+        this.data = Data;
+      })
+    });
   }
+
+  name = ''
+  data = []
 }

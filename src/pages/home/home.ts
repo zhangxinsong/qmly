@@ -21,9 +21,9 @@ export class HomePage {
     public modalCtrl: ModalController,
     public params: NavParams,
     public storage: Storage) {
-      
   }
   name = ""
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
   }
@@ -50,12 +50,6 @@ export class HomePage {
 
   data = []
 
-  login(){
-    this.navCtrl.push(LoginPage);
-  }
-  reg(){
-    this.navCtrl.push(RegPage);
-  }
   luxian(i){
     this.navCtrl.push(LuxianPage,{id: i});
   }

@@ -9,6 +9,7 @@ import { TaskPage } from '../task/task';
 import { DingdanPage } from '../dingdan/dingdan';
 import { Http,Jsonp } from '@angular/http';
 import { Storage } from '@ionic/storage';
+import { PingjiaPage } from '../pingjia/pingjia';
 
 /**
  * Generated class for the WodePage page.
@@ -42,16 +43,17 @@ export class WodePage {
         console.log(val)
         this.name = val;
         this.http.post("http://140.143.133.139:3000/login/one",{name:this.name}).subscribe(data => {
-          console.log(data)
           let Data = data.json();
           console.log(Data);
-          this.src = Data.touxiang;
-          this.name = Data.name;
-          this.introduce = Data.introduce;
+          if(Data.status == false){
+            let contactModal = this.modalCtrl.create(LoginPage);
+            contactModal.present();
+          }else{
+            this.src = Data.touxiang;
+            this.name = Data.name;
+            this.introduce = Data.introduce;
+          }
         })
-      }else{
-        let contactModal = this.modalCtrl.create(LoginPage);
-        contactModal.present();
       }
     }); 
   }
@@ -74,7 +76,10 @@ export class WodePage {
   task(){
     this.navCtrl.push(TaskPage);
   }
-  dingdan(i){
-    this.navCtrl.push(DingdanPage,{ content:i });
+  dingdan(){
+    this.navCtrl.push(DingdanPage);
+  }
+  pingjia(){
+    this.navCtrl.push(PingjiaPage);
   }
 }

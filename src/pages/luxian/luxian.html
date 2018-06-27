@@ -7,19 +7,17 @@
 <ion-header no-border>
 
   <ion-navbar color="green">
-    <ion-title>luxian</ion-title>
+    <ion-title>路线</ion-title>
     <ion-buttons end>
         <button ion-button icon-only>
           <ion-icon></ion-icon>
         </button>
       </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content no-padding>
-  <ion-slides class="slides" autoplay=3000 loop="true">
+  <ion-slides class="slides" autoplay=3000>
     <ion-slide>
       <img [src]="data.img" alt="">
     </ion-slide>
@@ -31,9 +29,9 @@
     </ion-slide>
   </ion-slides>
   <div class="biaoti">
-    <p>{{ data.title }}</p>
-    <p>价格 ￥{{ data.money }}</p>
-    <span>已报名：{{ data.renshu }}</span><span>导游：{{ data.name }}</span><span>北京</span>
+    <p class="one">{{ data.title }}</p>
+    <p class="two">价格 ￥{{ data.money }}</p>
+    <span class="three">已报名：{{ data.renshu }}</span><span class="four">导游：{{ data.name }}</span><span class="five">地点：北京</span>
   </div>
   <p class="xiangqing">详情介绍</p>
   <div>

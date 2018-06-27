@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http,Jsonp } from '@angular/http';
-import { ModalController } from 'ionic-angular';
+import { ToastController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { LoginPage } from '../login/login';
 
@@ -22,28 +22,16 @@ export class RegPage {
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public http:Http,
-    public jsonp:Jsonp,
-    public modalCtrl: ModalController) {
+    private toastCtrl: ToastController,
+    public jsonp:Jsonp) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegPage');
   }
   ionViewWillEnter() {
-    let elements = document.querySelectorAll(".tabbar");
-    if (elements != null) {
-        Object.keys(elements).map((key) => {
-            elements[key].style.display = 'none';
-        });
-    }
   }
   ionViewWillLeave() {
-    let elements = document.querySelectorAll(".tabbar");
-    if (elements != null) {
-        Object.keys(elements).map((key) => {
-            elements[key].style.display = 'flex';
-        });
-    }
   }
 
   username = ''
@@ -52,17 +40,33 @@ export class RegPage {
 
   reg(){
     if(this.password.length < 6){
-      alert('密码不能少于6位');
+      let toast = this.toastCtrl.create({
+        message: '密码不能少于6位',
+        duration: 2000,
+        position: 'middle'
+      });
+      toast.present();
     }
     else if(this.password == this.password1){
       this.http.post("http://www.myweiya.cn:3000/reg",{name:this.username,password:this.password}).subscribe(data => {
         console.log(data)
         let Data = data.json()
         if(Data.msg == '注册成功'){
+          let toast = this.toastCtrl.create({
+            message: '注册成功',
+            duration: 2000,
+            position: 'middle'
+          });
+          toast.present();
           this.navCtrl.push(LoginPage);
         }
         if(Data.msg == '此用户已经被注册'){
-          alert(Data.msg);
+          let toast = this.toastCtrl.create({
+            message: '此用户已经被注册',
+            duration: 2000,
+            position: 'middle'
+          });
+          toast.present(); 
         }
       })
     }

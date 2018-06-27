@@ -16,6 +16,14 @@
 </ion-header>
 
 <ion-content no-padding>
-  
+  <ion-list>
+    <ion-item *ngFor="let item of data,let i = index">
+      <h2> {{ item.title }}</h2>
+      <p>{{ item.miaoshu }}</p>
+      <p>状态：{{ item.zhuangtai }}</p>
+      <p>导游：{{ item.daoyou }}</p>
+      <button ion-button item-end (click)="delete(item._id,i)">删除任务</button>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

@@ -23,17 +23,12 @@
   <div>
     <div class="xingming"><span class="daoyou">姓名：{{ data.xingming }}</span><span class="didian">地点：北京</span></div>
     <div class="xingming"><span>半小时内无理由取消</span><span class="didian">已完成：300单</span></div>
-    <div class="luxian">
-        <button ion-button color="green" (click)="luxian(1)">路线1</button>
-        <button ion-button color="green" (click)="luxian(2)">路线2</button>
-        <button ion-button color="green" (click)="luxian(3)">自定义</button>
-    </div>
     <div class="pingjia">
       <p class="dypj">导游评价</p>
       <ion-grid>
         <ion-row>
           <span>评分：</span>
-          <span class="renshu">123人评价</span>
+          <span class="renshu">{{ pingjia.length }}评价</span>
         </ion-row>
         <ion-row>
           <span class="biaoqian">态度好</span>
@@ -43,13 +38,13 @@
         </ion-row> 
       </ion-grid>
       <ion-list>
-        <ion-item color="light">
+        <ion-item color="light" *ngFor="let item of pingjia">
           <ion-avatar item-start>
-            <img src="assets/imgs/slide-1.png">
+            <img [src]="item.img">
           </ion-avatar>
-          <h2>Cher</h2>
-          <p>Ugh. As if.</p>
-          <span item-end>2018-2-21</span>
+          <h2>{{ item.name }}</h2>
+          <p>{{ item.pingjia }}</p>
+          <span item-end>{{ item.riqi }}</span>
         </ion-item>
       </ion-list>
     </div>

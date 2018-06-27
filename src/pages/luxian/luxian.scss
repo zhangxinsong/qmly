@@ -11,8 +11,32 @@ page-luxian {
         height: 200px;
     }
     .biaoti{
+        .one{
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .two{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            color: #18DE73;
+            font-size: 14px;
+        }
         p{
             margin: 0;
+        }
+        span{
+            font-size: 12px;
+            color: gray;
+        }
+        .three{
+            float: left;
+        }
+        .four{
+            margin-left: 70px;
+        }
+        .five{
+            float: right;
         }
     }
     .xiangqing{

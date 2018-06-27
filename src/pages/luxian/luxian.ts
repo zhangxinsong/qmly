@@ -31,28 +31,18 @@ export class LuxianPage {
     console.log('ionViewDidLoad LuxianPage');
   }
   ionViewWillEnter() {
-    let elements = document.querySelectorAll(".tabbar");
-    if (elements != null) {
-        Object.keys(elements).map((key) => {
-            elements[key].style.display = 'none';
-        });
-    }
     this.http.post("http://140.143.133.139:3000/luxian/two",{id:this.id}).subscribe(data => {
       let Data = data.json();
       console.log(Data);
       this.data = Data[0];
+      this.img = Data[0].img1;
+      this.biaoti = Data[0].title;
     })
-  }
-  ionViewWillLeave() {
-    let elements = document.querySelectorAll(".tabbar");
-    if (elements != null) {
-        Object.keys(elements).map((key) => {
-            elements[key].style.display = 'flex';
-        });
-    }
   }
 
   id = ''
+  img = ''
+  biaoti = ''
   data = []
 
   liaotian(){
@@ -62,6 +52,6 @@ export class LuxianPage {
     this.navCtrl.push(DaoyouPage,{name: i});
   }
   xiadan(){
-    this.navCtrl.push(XiadanPage,{id: this.id});
+    this.navCtrl.push(XiadanPage,{id: this.id,img: this.img, biaoti: this.biaoti});
   }
 }
