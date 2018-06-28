@@ -31,7 +31,7 @@
 
 <img src="http://140.143.133.139/resume/img2/44.png" width=250 height=400 />
 <img src="http://140.143.133.139/resume/img2/55.png" width=250 height=400 />
-<img src="http://140.143.133.139/resume/img2/66.png" width=250 height=400 />
+<img src="http://140.143.133.139/resume/img2/666.png" width=250 height=400 />
 
 <img src="http://140.143.133.139/resume/img2/77.png" width=250 height=400 />
 <img src="http://140.143.133.139/resume/img2/88.png" width=250 height=400 />
