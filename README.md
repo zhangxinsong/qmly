@@ -28,7 +28,6 @@
 <img src="http://140.143.133.139/resume/img2/1.png" width=250 height=400 />
 <img src="http://140.143.133.139/resume/img2/2.png" width=250 height=400 />
 <img src="http://140.143.133.139/resume/img2/3.png" width=250 height=400 />
-<img src="http://140.143.133.139/resume/img2/3(2).png" width=250 height=400 />
 
 <img src="http://140.143.133.139/resume/img2/4 (2).png" width=250 height=400 />
 <img src="http://140.143.133.139/resume/img2/5.png" width=250 height=400 />
