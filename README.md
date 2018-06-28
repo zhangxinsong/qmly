@@ -30,7 +30,6 @@
 <img src="http://140.143.133.139/resume/img2/3.png" width=250 height=400 />
 
 <img src="http://140.143.133.139/resume/img2/4.png" width=250 height=400 />
-<img src="http://140.143.133.139/resume/img2/5.png" width=250 height=400 />
 <img src="http://140.143.133.139/resume/img2/6.png" width=250 height=400 />
 
 <img src="http://140.143.133.139/resume/img2/7.png" width=250 height=400 />
