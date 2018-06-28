@@ -30,13 +30,13 @@
 <img src="http://140.143.133.139/resume/img2/3.png" width=250 height=400 />
 <img src="http://140.143.133.139/resume/img2/3(2).png" width=250 height=400 />
 
-<img src="http://140.143.133.139/resume/img2/4(2).png" width=250 height=400 />
+<img src="http://140.143.133.139/resume/img2/4 (2).png" width=250 height=400 />
 <img src="http://140.143.133.139/resume/img2/5.png" width=250 height=400 />
 <img src="http://140.143.133.139/resume/img2/6.png" width=250 height=400 />
 
-<img src="http://140.143.133.139/resume/img2/7(2).png" width=250 height=400 />
-<img src="http://140.143.133.139/resume/img2/8(2).png" width=250 height=400 />
-<img src="http://140.143.133.139/resume/img2/9(2).png" width=250 height=400 />
+<img src="http://140.143.133.139/resume/img2/7 (2).png" width=250 height=400 />
+<img src="http://140.143.133.139/resume/img2/8 (2).png" width=250 height=400 />
+<img src="http://140.143.133.139/resume/img2/9 (2).png" width=250 height=400 />
 
 ***
 appjs文件夹是通过express搭建nodejs编写的后台  
