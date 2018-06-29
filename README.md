@@ -1,7 +1,7 @@
 #全民旅游
 
 * [Github](https://github.com/zhangxinsong/qmly) 
-* [HostedRedmine](http://www.hostedredmine.com/projects/island/wiki)
+* [HostedRedmine](http://10.7.1.5/projects/qmly1?jump=welcome)
 
 ### 项目简介
 
